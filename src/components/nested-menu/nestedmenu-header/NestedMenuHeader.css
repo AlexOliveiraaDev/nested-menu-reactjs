@@ -1,0 +1,42 @@
+.main-header-div {
+  flex-grow: 1;
+  display: flex;
+}
+
+.header-button {
+  position: relative;
+  display: flex;
+  height: 45px;
+  flex-grow: 1;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  background-color: transparent;
+  border: none;
+  color: var(--text-color);
+}
+
+.header-add-button {
+  display: flex;
+  align-items: center;
+  height: 80%;
+  aspect-ratio: 1/1;
+  border-radius: 8px;
+  background-color: transparent;
+  color: var(--text-color);
+  border: none;
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: background-color 0.25s ease;
+}
+
+.header-add-button:hover {
+  background-color: var(--bg-color-overlay);
+}
+
+.header-add-button:active {
+  background-color: var(--bg-color-active);
+  transition: all 0.05s ease;
+}

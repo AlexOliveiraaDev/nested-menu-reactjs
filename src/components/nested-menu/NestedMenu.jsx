@@ -1,10 +1,11 @@
 import React from "react";
 import "./NestedMenu.css";
+import NestedMenuHeader from "./nestedmenu-header/NestedMenuHeader";
 
 const NestedMenu = () => {
   return (
-    <div>
-      <h1>Teste</h1>
+    <div className="main-div">
+      <NestedMenuHeader />
     </div>
   );
 };
