@@ -6,7 +6,7 @@ import NestedMenuItem from "./nestedmenu-Item/NestedMenuItem";
 import { MagicMotion } from "react-magic-motion";
 
 const NestedMenu = ({items}) => {
-  const [headerState, getHeaderState] = useState(false);
+  const [headerState, getHeaderState] = useState(true);
 
   // Recieve a callback from NestedMenuHeader
   const handleHeaderClick = () => {
@@ -17,7 +17,7 @@ const NestedMenu = ({items}) => {
     <MagicMotion>
     <div className="main-div">
       <NestedMenuHeader onHeaderClick={handleHeaderClick} />
-      <div className="main-items-div" hidden={headerState}>
+      <div className="main-items-div" style={{display: headerState ? "flex" : "none"}}>
       {items.map(({name, icon, children}, index) => (
         <NestedMenuItem key={index} name={name} icon={icon} children={children}/>
       ))}
