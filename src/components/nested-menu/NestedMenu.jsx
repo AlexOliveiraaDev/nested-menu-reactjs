@@ -10,7 +10,7 @@ const NestedMenu = ({items}) => {
 
   // Recieve a callback from NestedMenuHeader
   const handleHeaderClick = () => {
-    getHeaderState(headerState);
+    getHeaderState(!headerState);
   }
 
   return (
