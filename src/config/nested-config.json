@@ -1,15 +1,18 @@
 [
   {
     "name": "Item 1",
+    "icon": "icon-item1.png",
     "children": [
       {
         "name": "Item 1.1",
+        "icon": "icon-item1-1.png",
         "children": []
       }
     ]
   },
   {
     "name": "Item 2",
+    "icon": "icon-item2.png",
     "children": []
   }
 ]
