@@ -6,16 +6,17 @@ import NestedMenuItem from "./nestedmenu-Item/NestedMenuItem";
 
 const NestedMenu = ({items}) => {
 
-  const [isHeaderOpen, setHeaderOpen] = useState(true);
+  const [headerState, getHeaderState] = useState(true);
 
+  // Recieve a callback from NestedMenuHeader
   const handleHeaderClick = () => {
-    setHeaderOpen(!isHeaderOpen);
+    getHeaderState(headerState);
   }
 
   return (
     <div className="main-div">
       <NestedMenuHeader onHeaderClick={handleHeaderClick} />
-      <div hidden={isHeaderOpen}>
+      <div hidden={headerState}>
       {items.map(({name, icon, children}, index) => (
         <NestedMenuItem/>
       ))}
