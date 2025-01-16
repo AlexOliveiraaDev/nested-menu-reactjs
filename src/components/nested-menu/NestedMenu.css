@@ -6,3 +6,9 @@
   justify-content: start;
   background-color: var(--bg-color);
 }
+
+.main-items-div{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}

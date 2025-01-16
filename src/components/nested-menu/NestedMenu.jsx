@@ -3,10 +3,10 @@ import { useState } from "react";
 import "./NestedMenu.css";
 import NestedMenuHeader from "./nestedmenu-header/NestedMenuHeader";
 import NestedMenuItem from "./nestedmenu-Item/NestedMenuItem";
+import { MagicMotion } from "react-magic-motion";
 
 const NestedMenu = ({items}) => {
-
-  const [headerState, getHeaderState] = useState(true);
+  const [headerState, getHeaderState] = useState(false);
 
   // Recieve a callback from NestedMenuHeader
   const handleHeaderClick = () => {
@@ -14,14 +14,16 @@ const NestedMenu = ({items}) => {
   }
 
   return (
+    <MagicMotion>
     <div className="main-div">
       <NestedMenuHeader onHeaderClick={handleHeaderClick} />
-      <div hidden={headerState}>
+      <div className="main-items-div" hidden={headerState}>
       {items.map(({name, icon, children}, index) => (
-        <NestedMenuItem/>
+        <NestedMenuItem key={index} name={name} icon={icon} children={children}/>
       ))}
       </div>
     </div>
+    </MagicMotion>
   );
 };
 

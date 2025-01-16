@@ -10,9 +10,10 @@
   flex-direction: row;
   align-items: center;
   gap: 10px;
-  background-color: transparent;
+  background-color: var(--bg-color);
   border: none;
   color: var(--text-color);
+  z-index: 1;
 }
 
 .header-add-button {

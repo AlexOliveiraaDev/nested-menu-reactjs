@@ -1,18 +1,18 @@
 [
   {
     "name": "Item 1",
-    "icon": "icon-item1.png",
+    "icon": "SquareDashed",
     "children": [
       {
         "name": "Item 1.1",
-        "icon": "icon-item1-1.png",
+        "icon": "Image",
         "children": []
       }
     ]
   },
   {
-    "name": "Item 2",
-    "icon": "icon-item2.png",
+    "name": "Text",
+    "icon": "Type",
     "children": []
   }
 ]
