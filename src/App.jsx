@@ -4,7 +4,7 @@ import NestedMenu from "./components/nested-menu/NestedMenu.jsx";
 
 function App() {
   return (
-    <div>
+    <div className="main">
       <NestedMenu />
     </div>
   );
