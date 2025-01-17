@@ -37,6 +37,7 @@ const NestedMenuItem = ({ name, icon, children }) => {
         <div className="menu-item-gap"></div>
         {setIcon(icon)}
         <span>{name}</span>
+        {/*The StopPropagation prevents item-row from being clicked */}
         <div onClick={(e) => e.stopPropagation()}>
           <Trash2 className="menu-item-icon menu-item-delete" />
         </div>

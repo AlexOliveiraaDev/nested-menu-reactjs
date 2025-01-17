@@ -2,12 +2,20 @@
 
 :root {
   --bg-color: #2c2c2c;
-  --bg-color-overlay: #373737;
+  --bg-color-overlay: #383838;
+  --border-color: #444444;
   --text-color: white;
   --bg-color-active: #606060;
+  --bg-item-color-selected: #0c8ce9;
+  --item-icon-color: #a1a1a1;
+  --dropdown-background-color: #1e1e1e;
+  --dropdown-background-item-hover: #0c8ce9;
+
   --font-size-items: 1rem;
   --item-icon-size: 1em;
-  --item-icon-color: #a1a1a1;
+  --border-radius: 12px;
+  --border-radius-item: 6px;
+
 }
 s * {
   font-family: "Poppins", serif;
@@ -17,6 +25,7 @@ body {
   margin: 0px;
   padding: 0px;
   font-family: "Poppins", sans-serif;
+  background-color: #1d1d1d;
 }
 
 .main {

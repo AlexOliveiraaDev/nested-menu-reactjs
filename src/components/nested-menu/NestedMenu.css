@@ -2,13 +2,23 @@
   width: 300px;
   height: 100%;
   display: flex;
+  position: relative;
   flex-direction: column;
   justify-content: start;
   background-color: var(--bg-color);
   padding-right: 10px;
+
 }
 
 .main-items-div {
   flex-direction: column;
   gap: 10px;
+}
+
+.add-dropdown{
+z-index: 2;
+position: absolute;
+right: -250px;
+top: 30px;
+
 }

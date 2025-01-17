@@ -38,8 +38,8 @@
   height: var(--item-icon-size);
 }
 
-.menu-item-row:hover .menu-item-arrow {
-  display: block;
+.main-div:hover .menu-item-arrow {
+    display: block;
 }
 .menu-item-row:hover {
   background-color: var(--bg-color-active);
