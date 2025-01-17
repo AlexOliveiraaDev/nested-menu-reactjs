@@ -3,27 +3,27 @@ import { useState } from "react";
 import "./NestedMenu.css";
 import NestedMenuHeader from "./nestedmenu-header/NestedMenuHeader";
 import NestedMenuItem from "./nestedmenu-Item/NestedMenuItem";
+import NestedMenuList from "./nestedmenu-list/NestedMenuList";
 import { MagicMotion } from "react-magic-motion";
 
-const NestedMenu = ({items}) => {
-  const [headerState, getHeaderState] = useState(true);
+const NestedMenu = ({ items }) => {
+  const [headerState, setVisible] = useState(true);
 
   // Recieve a callback from NestedMenuHeader
   const handleHeaderClick = () => {
-    getHeaderState(!headerState);
-  }
+    setVisible(!headerState);
+  };
 
   return (
-    <MagicMotion>
     <div className="main-div">
       <NestedMenuHeader onHeaderClick={handleHeaderClick} />
-      <div className="main-items-div" style={{display: headerState ? "flex" : "none"}}>
-      {items.map(({name, icon, children}, index) => (
-        <NestedMenuItem key={index} name={name} icon={icon} children={children}/>
-      ))}
+      <div
+        className="main-items-div"
+        style={{ display: headerState ? "flex" : "none" }}
+      >
+        {<NestedMenuList items={items} />}
       </div>
     </div>
-    </MagicMotion>
   );
 };
 

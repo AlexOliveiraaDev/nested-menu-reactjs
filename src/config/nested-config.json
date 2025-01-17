@@ -7,6 +7,22 @@
         "name": "Item 1.1",
         "icon": "Image",
         "children": []
+      },
+      {
+        "name": "Item 1.2",
+        "icon": "Type",
+        "children": [
+          {
+            "name": "Item 1.2.1",
+            "icon": "SquareDashed",
+            "children": []
+          },
+          {
+            "name": "Item 1.2.2",
+            "icon": "Image",
+            "children": []
+          }
+        ]
       }
     ]
   },
@@ -14,5 +30,48 @@
     "name": "Text",
     "icon": "Type",
     "children": []
+  },
+  {
+    "name": "Graphics",
+    "icon": "Image",
+    "children": [
+      {
+        "name": "Vector",
+        "icon": "SquareDashed",
+        "children": []
+      },
+      {
+        "name": "Bitmap",
+        "icon": "Image",
+        "children": []
+      }
+    ]
+  },
+  {
+    "name": "Layout",
+    "icon": "SquareDashed",
+    "children": [
+      {
+        "name": "Grid",
+        "icon": "Type",
+        "children": []
+      },
+      {
+        "name": "Flexbox",
+        "icon": "SquareDashed",
+        "children": [
+          {
+            "name": "Row",
+            "icon": "Image",
+            "children": []
+          },
+          {
+            "name": "Column",
+            "icon": "Type",
+            "children": []
+          }
+        ]
+      }
+    ]
   }
 ]
