@@ -6,10 +6,12 @@ import NestedMenuList from "./nestedmenu-list/NestedMenuList";
 import NestedMenuDropdown from "./nestedmenu-dropdown/NestedMenuDropdown";
 
 const NestedMenu = ({ items }) => {
-  const [headerState, setVisible] = useState(true);
+  const [headerState, setHeaderVisibility] = useState(true);
   const [data, setData] = useState(items);
+  const [dropdownState, setDropdown] = useState(false);
 
   const handleClickDropdown = (e) => {
+    toggleDropdown();
     switch (e) {
       case 0:
         addItem({name: "New Container", icon: "SquareDashed"});
@@ -23,6 +25,10 @@ const NestedMenu = ({ items }) => {
       default:
         break;
     }
+  }
+
+  const toggleDropdown = () => {
+    setDropdown(!dropdownState);
   }
 
   const addItem = ({name, icon}) => {
@@ -47,14 +53,14 @@ const NestedMenu = ({ items }) => {
 
   // Recieve a callback from NestedMenuHeader
   const handleHeaderClick = () => {
-    setVisible(!headerState);
+    setHeaderVisibility(!headerState);
   };
 
   return (
     <div className="main-div">
-      <div className="add-dropdown"><NestedMenuDropdown onClick={handleClickDropdown}/></div>
+      {dropdownState && <div className="add-dropdown"><NestedMenuDropdown onClick={handleClickDropdown}/></div>}
       
-      <NestedMenuHeader onHeaderClick={(e) => handleHeaderClick(e)} />
+      <NestedMenuHeader onHeaderClick={(e) => handleHeaderClick(e)} onAddClick={toggleDropdown}/>
       <div
         className="main-items-div"
         style={{ display: headerState ? "flex" : "none" }}

@@ -28,22 +28,26 @@ const NestedMenuItem = ({ name, icon, children }) => {
   return (
     <div className="menu-item-main-div">
       <div className="menu-item-row" onClick={() => switchOpen(!open)}>
-        {children.length > 0 &&
-          (open ? (
-            <ChevronDown className="menu-item-arrow" />
-          ) : (
-            <ChevronRight className="menu-item-arrow" />
-          ))}
+       
+       {children.length > 0 
+       && ( open ? 
+          (<ChevronDown className="menu-item-arrow" />)
+          : 
+          (<ChevronRight className="menu-item-arrow" />))}
+
         <div className="menu-item-gap"></div>
         {setIcon(icon)}
         <span>{name}</span>
+
         {/*The StopPropagation prevents item-row from being clicked */}
         <div onClick={(e) => e.stopPropagation()}>
           <Trash2 className="menu-item-icon menu-item-delete" />
         </div>
+        
       </div>
+
       {children.length > 0 && (
-        <div className="menu-item-children" hidden={!open}>
+        open && <div className="menu-item-children">
           <NestedMenuList items={children} />
         </div>
       )}
