@@ -5,9 +5,10 @@
   flex-direction: column;
   justify-content: start;
   background-color: var(--bg-color);
+  padding-right: 10px;
 }
 
-.main-items-div{
+.main-items-div {
   flex-direction: column;
   gap: 10px;
 }

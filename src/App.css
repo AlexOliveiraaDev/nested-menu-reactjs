@@ -1,17 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;1,400;1,700&display=swap");
 
-
 :root {
   --bg-color: #2c2c2c;
   --bg-color-overlay: #373737;
   --text-color: white;
   --bg-color-active: #606060;
   --font-size-items: 1rem;
-  --item-icon-size:1em;
-}s
-
-
-* {
+  --item-icon-size: 1em;
+  --item-icon-color: #a1a1a1;
+}
+s * {
   font-family: "Poppins", serif;
 }
 

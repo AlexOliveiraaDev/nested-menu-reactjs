@@ -4,7 +4,6 @@ import "./NestedMenu.css";
 import NestedMenuHeader from "./nestedmenu-header/NestedMenuHeader";
 import NestedMenuItem from "./nestedmenu-Item/NestedMenuItem";
 import NestedMenuList from "./nestedmenu-list/NestedMenuList";
-import { MagicMotion } from "react-magic-motion";
 
 const NestedMenu = ({ items }) => {
   const [headerState, setVisible] = useState(true);

@@ -6,7 +6,8 @@ import {
   Type,
   Image,
   ChevronDown,
-  ChevronUp,
+  ChevronRight,
+  Trash2,
 } from "lucide-react";
 
 function setIcon(icon) {
@@ -26,14 +27,25 @@ const NestedMenuItem = ({ name, icon, children }) => {
   const [open, switchOpen] = useState(false);
   return (
     <div className="menu-item-main-div">
-      <div onClick={() => switchOpen(!open)}>
-        {children.length > 0 && (open ? <ChevronDown /> : <ChevronUp />)}
+      <div className="menu-item-row" onClick={() => switchOpen(!open)}>
+        {children.length > 0 &&
+          (open ? (
+            <ChevronDown className="menu-item-arrow" />
+          ) : (
+            <ChevronRight className="menu-item-arrow" />
+          ))}
+        <div className="menu-item-gap"></div>
         {setIcon(icon)}
         <span>{name}</span>
+        <div onClick={(e) => e.stopPropagation()}>
+          <Trash2 className="menu-item-icon menu-item-delete" />
+        </div>
       </div>
-      <div hidden={!open}>
-        <NestedMenuList items={children} />
-      </div>
+      {children.length > 0 && (
+        <div className="menu-item-children" hidden={!open}>
+          <NestedMenuList items={children} />
+        </div>
+      )}
     </div>
   );
 };
