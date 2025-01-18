@@ -9,6 +9,7 @@ import {
   ChevronRight,
   Trash2,
 } from "lucide-react";
+import { useDraggable, useDroppable } from "@dnd-kit/core";
 
 function setIcon(icon) {
   switch (icon) {
@@ -23,34 +24,53 @@ function setIcon(icon) {
   }
 }
 
-const NestedMenuItem = ({ name, icon, children }) => {
+const NestedMenuItem = ({ id, name, icon, children }) => {
+  const { attributes, listeners, setNodeRef, transform } = useDraggable({
+    id: id,
+  });
+
+  const { setNodeRef: setDroppableRef } = useDroppable({ id: id });
+
+  const style = transform
+    ? {
+        transform: `translate3d(${transform.x}px, ${transform.y}px, 0)`,
+      }
+    : undefined;
+
   const [open, switchOpen] = useState(false);
+
   return (
-    <div className="menu-item-main-div">
-      <div className="menu-item-row" onClick={() => switchOpen(!open)}>
-       
-       {children.length > 0 
-       && ( open ? 
-          (<ChevronDown className="menu-item-arrow" />)
-          : 
-          (<ChevronRight className="menu-item-arrow" />))}
+    <div ref={setDroppableRef} className="menu-item-wrapper">
+      <div
+        className="menu-item-main-div"
+        ref={setNodeRef}
+        style={style}
+        {...listeners}
+        {...attributes}
+      >
+        <div className="menu-item-row" onClick={() => switchOpen(!open)}>
+          {children.length > 0 &&
+            (open ? (
+              <ChevronDown className="menu-item-arrow" />
+            ) : (
+              <ChevronRight className="menu-item-arrow" />
+            ))}
 
-        <div className="menu-item-gap"></div>
-        {setIcon(icon)}
-        <span>{name}</span>
+          <div className="menu-item-gap"></div>
+          {setIcon(icon)}
+          <span>{name}</span>
 
-        {/*The StopPropagation prevents item-row from being clicked */}
-        <div onClick={(e) => e.stopPropagation()}>
-          <Trash2 className="menu-item-icon menu-item-delete" />
+          <div onClick={(e) => e.stopPropagation()}>
+            <Trash2 className="menu-item-icon menu-item-delete" />
+          </div>
         </div>
-        
+
+        {children.length > 0 && open && (
+          <div className="menu-item-children">
+            <NestedMenuList items={children} />
+          </div>
+        )}
       </div>
-
-      {children.length > 0 && (
-        open && <div className="menu-item-children">
-          <NestedMenuList items={children} />
-        </div>
-      )}
     </div>
   );
 };

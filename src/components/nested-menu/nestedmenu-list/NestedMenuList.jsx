@@ -7,6 +7,7 @@ const NestedMenuList = ({ items }) => {
       {items.map(({ name, icon, children }, index) => (
         <NestedMenuItem
           key={index}
+          id={index}
           name={name}
           icon={icon}
           children={children}
