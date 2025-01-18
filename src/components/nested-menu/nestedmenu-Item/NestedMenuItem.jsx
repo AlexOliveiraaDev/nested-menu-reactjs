@@ -11,7 +11,6 @@ import {
 } from "lucide-react";
 import { useDraggable, useDroppable } from "@dnd-kit/core";
 
-
 function setIcon(icon) {
   switch (icon) {
     case "SquareDashed":
@@ -25,12 +24,11 @@ function setIcon(icon) {
   }
 }
 
-const NestedMenuItem = ({ id, name, icon, children }) => {
+const NestedMenuItem = ({ id, name, icon, children, onClickDelete }) => {
   const { attributes, listeners, setNodeRef, transform } = useDraggable({
     id: id,
   });
   const { setNodeRef: setDroppableRef } = useDroppable({ id: id });
-
 
   const style = transform
     ? {
@@ -61,14 +59,19 @@ const NestedMenuItem = ({ id, name, icon, children }) => {
           {setIcon(icon)}
           <span>{name}</span>
 
-          <div onClick={(e) => e.stopPropagation()}>
+          <div
+            onClick={(e) => {
+              e.stopPropagation();
+              onClickDelete(id);
+            }}
+          >
             <Trash2 className="menu-item-icon menu-item-delete" />
           </div>
         </div>
 
         {children.length > 0 && open && (
           <div className="menu-item-children">
-            <NestedMenuList items={children} />
+            <NestedMenuList items={children} onClickDelete={onClickDelete} />
           </div>
         )}
       </div>

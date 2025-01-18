@@ -11,6 +11,7 @@ import {
   findItemById,
   removeItemAtPath,
   addItemToPath,
+  generateUUID,
 } from "../../hooks/nestedMenuUtils";
 
 const NestedMenu = ({ items }) => {
@@ -24,7 +25,7 @@ const NestedMenu = ({ items }) => {
 
   const handleClickDropdown = (e) => {
     toggleDropdown();
-    const newId = `new-${Date.now()}`;
+    const newId = generateUUID();
     const newItems = [
       { name: "New Container", icon: "SquareDashed", id: newId },
       { name: "New Text", icon: "Type", id: newId },
@@ -74,7 +75,10 @@ const NestedMenu = ({ items }) => {
           className="main-items-div"
           style={{ display: headerState ? "flex" : "none" }}
         >
-          <NestedMenuList items={data} />
+          <NestedMenuList
+            items={data}
+            onClickDelete={(id) => console.log("Clicou!", id)}
+          />
         </div>
       </div>
     </DndContext>
