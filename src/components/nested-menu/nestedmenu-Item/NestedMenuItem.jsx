@@ -11,6 +11,7 @@ import {
 } from "lucide-react";
 import { useDraggable, useDroppable } from "@dnd-kit/core";
 
+
 function setIcon(icon) {
   switch (icon) {
     case "SquareDashed":
@@ -28,8 +29,8 @@ const NestedMenuItem = ({ id, name, icon, children }) => {
   const { attributes, listeners, setNodeRef, transform } = useDraggable({
     id: id,
   });
-
   const { setNodeRef: setDroppableRef } = useDroppable({ id: id });
+
 
   const style = transform
     ? {

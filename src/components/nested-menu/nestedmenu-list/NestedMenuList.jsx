@@ -4,13 +4,13 @@ import NestedMenuItem from "../nestedmenu-Item/NestedMenuItem";
 const NestedMenuList = ({ items }) => {
   return (
     <div>
-      {items.map(({ name, icon, children }, index) => (
+      {items.map((item) => (
         <NestedMenuItem
-          key={index}
-          id={index}
-          name={name}
-          icon={icon}
-          children={children}
+          key={item.id}
+          id={item.id}
+          name={item.name}
+          icon={item.icon}
+          children={item.children || []}
         />
       ))}
     </div>
