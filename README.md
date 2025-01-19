@@ -1,12 +1,16 @@
 # 🌳 Nested Menu React Component
 
-A flexible, customizable nested menu component for React applications with drag-and-drop functionality and real-time JSON visualization.
+A flexible, customizable nested menu component built with React and TypeScript, featuring drag-and-drop functionality and real-time JSON visualization.
 
 ![React](https://img.shields.io/badge/-React-61DAFB?style=flat-square&logo=react&logoColor=black)
+![TypeScript](https://img.shields.io/badge/-TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white)
 ![Vite](https://img.shields.io/badge/-Vite-646CFF?style=flat-square&logo=vite&logoColor=white)
 ![DND Kit](https://img.shields.io/badge/-DND_Kit-000000?style=flat-square)
+![Jest](https://img.shields.io/badge/-Jest-C21325?style=flat-square&logo=jest&logoColor=white)
 
 ![Example Image](public/print.png "Example Title")
+
+[View the nested menu online here](https://nested-menu-alexoliveiraa.netlify.app/)
 
 ## ✨ Features
 
@@ -18,6 +22,8 @@ A flexible, customizable nested menu component for React applications with drag-
 - 🎭 Multiple item types (Container, Text, Image)
 - 🗑️ Easy item deletion
 - 📱 Responsive design
+- 🧪 Comprehensive test coverage
+- 💪 Full TypeScript support
 
 ## 🚀 Installation
 
@@ -33,48 +39,79 @@ npm install
 
 # Start development server
 npm run dev
+
+# Run tests
+npm run test
+
+# Run tests with coverage
+npm run test:cov
 ```
 
 ## 💻 Usage
 
-First, create a JSON configuration file for your menu structure:
+First, create an interface for your menu structure:
 
-```json
-[
+```typescript
+interface MenuItem {
+  name: string;
+  icon: string;
+  children?: MenuItem[];
+}
+
+const menuConfig: MenuItem[] = [
   {
-    "items": [
+    name: "Container 1",
+    icon: "SquareDashed",
+    children: [
       {
-        "name": "Container 1",
-        "icon": "SquareDashed",
-        "children": [
-          {
-            "name": "Text Item",
-            "icon": "Type"
-          },
-          {
-            "name": "Image Item",
-            "icon": "Image"
-          }
-        ]
+        name: "Text Item",
+        icon: "Type"
+      },
+      {
+        name: "Image Item",
+        icon: "Image"
       }
     ]
   }
-]
+];
 ```
 
 Then import and use the component:
 
-```jsx
+```tsx
 import NestedMenu from "./components/nested-menu/NestedMenu";
-import menuConfig from "./config/menu-config.json";
+import { MenuItem } from "./types/NestedMenuTypes";
 
 function App() {
   return (
     <div>
-      <NestedMenu items={menuConfig.items} />
+      <NestedMenu items={menuConfig} />
     </div>
   );
 }
+```
+
+## 🧪 Testing
+
+The project includes comprehensive tests using Jest and React Testing Library. Test files cover:
+
+- Component rendering
+- User interactions
+- Drag and drop functionality
+- State management
+- Utils functions
+
+Run tests with:
+
+```bash
+# Run tests
+npm run test
+
+# Run tests with coverage
+npm run test:cov
+
+# Run tests in watch mode
+npm run test -- --watch
 ```
 
 ## 🎨 Customization
@@ -99,14 +136,14 @@ You can customize the appearance by modifying the CSS variables in your styleshe
 
 ### Adding New Item Types
 
-To add new types of items to your menu, you'll need to modify two files:
+To add new types of items to your menu, you'll need to modify the following TypeScript files:
 
 1. In `NestedMenuItem.tsx`, add your new icon and case:
 
-```jsx
-import { SquareDashed, Type, Image, FileText, Link } from "lucide-react"; // Add new icons
+```tsx
+import { SquareDashed, Type, Image, FileText, Link } from "lucide-react";
 
-function setIcon(icon) {
+function setIcon(icon: string): JSX.Element {
   switch (icon) {
     case "SquareDashed":
       return <SquareDashed className="menu-item-icon" />;
@@ -125,54 +162,20 @@ function setIcon(icon) {
 }
 ```
 
-2. In `NestedMenuDropdown.tsx`, add your new items:
+2. Update the `handleClickDropdown` function in `NestedMenu.tsx`:
 
-```jsx
-import { SquareDashed, Type, Image, FileText, Link } from "lucide-react";
-
-const NestedMenuDropdown = ({ onClick }) => {
-  return (
-    <div className="main-dropdown-div">
-      <div className="dropdown-row" onClick={() => onClick(0)}>
-        <SquareDashed />
-        <span>Container</span>
-      </div>
-      <div className="dropdown-row" onClick={() => onClick(1)}>
-        <Type />
-        <span>Text</span>
-      </div>
-      <div className="dropdown-row" onClick={() => onClick(2)}>
-        <Image />
-        <span>Image</span>
-      </div>
-      {/* Add new items here */}
-      <div className="dropdown-row" onClick={() => onClick(3)}>
-        <FileText />
-        <span>Document</span>
-      </div>
-      <div className="dropdown-row" onClick={() => onClick(4)}>
-        <Link />
-        <span>Link</span>
-      </div>
-    </div>
-  );
-};
-```
-
-3. Update the `handleClickDropdown` function in `NestedMenu.tsx`:
-
-```jsx
-const handleClickDropdown = (e) => {
+```tsx
+const handleClickDropdown = (index: number) => {
   toggleDropdown();
   const newId = generateUUID();
-  const newItems = [
+  const newItems: Item[] = [
     { name: "New Container", icon: "SquareDashed", id: newId },
     { name: "New Text", icon: "Type", id: newId },
     { name: "New Image", icon: "Image", id: newId },
     { name: "New Document", icon: "Document", id: newId },
-    { name: "New Link", icon: "Link", id: newId },
+    { name: "New Link", icon: "Link", id: newId }
   ];
-  if (e >= 0 && e < newItems.length) addItem(newItems[e]);
+  if (index >= 0 && index < newItems.length) addItem(newItems[index]);
 };
 ```
 
@@ -180,12 +183,17 @@ const handleClickDropdown = (e) => {
 
 ```
 nested-menu/
-├── NestedMenu.tsx         # Main component
-├── NestedMenuHeader.tsx   # Header with collapse/expand
-├── NestedMenuItem.tsx     # Individual menu item
-├── NestedMenuList.tsx     # List container
-├── NestedMenuDropdown.tsx # Add item dropdown
-└── CodeWindow.tsx         # JSON viewer
+├── types/
+│   └── NestedMenuTypes.ts    # TypeScript interfaces
+├── components/
+│   ├── NestedMenu.tsx        # Main component
+│   ├── NestedMenuHeader.tsx  # Header with collapse/expand
+│   ├── NestedMenuItem.tsx    # Individual menu item
+│   ├── NestedMenuList.tsx    # List container
+│   ├── NestedMenuDropdown.tsx# Add item dropdown
+│   └── CodeWindow.tsx        # JSON viewer
+└── hooks/
+    └── nestedMenuUtils.ts    # Utility functions
 ```
 
 ## 📝 Features in Detail
@@ -195,6 +203,7 @@ nested-menu/
 - Items can be dragged to reorder or nest within containers
 - Maximum nesting depth of 2 levels
 - Visual feedback during drag operations
+- Type-safe drag event handling
 
 ### Item Management
 
@@ -212,13 +221,15 @@ nested-menu/
 
 ## 🤝 Contributing
 
-Contributions are welcome! Feel free to:
+Contributions are welcome! Please ensure you:
 
 1. Fork the repository
 2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
+3. Write tests for new features
+4. Ensure all tests pass (`npm run test`)
+5. Commit your changes (`git commit -m 'Add amazing feature'`)
+6. Push to the branch (`git push origin feature/amazing-feature`)
+7. Open a Pull Request
 
 ## 📄 License
 
@@ -229,6 +240,8 @@ This project is licensed under the MIT License.
 - [dnd kit](https://dndkit.com/) for the drag and drop functionality
 - [Lucide React](https://lucide.dev/) for the beautiful icons
 - [PrismJS](https://prismjs.com/) for code syntax highlighting
+- [Jest](https://jestjs.io/) for testing
+- [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/) for component testing
 
 ---
 
