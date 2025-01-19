@@ -12,7 +12,7 @@ import test5 from "/src/config/test5.json";
 function App() {
   return (
     <div className="main">
-      <NestedMenu items={test5} />
+      <NestedMenu items={test1} />
     </div>
   );
 }
