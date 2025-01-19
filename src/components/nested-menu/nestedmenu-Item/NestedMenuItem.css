@@ -39,7 +39,7 @@
 }
 
 .main-div:hover .menu-item-arrow {
-    display: block;
+  display: block;
 }
 .menu-item-row:hover {
   background-color: var(--bg-color-active);
@@ -73,4 +73,16 @@
 
 .menu-item-gap {
   width: 10px;
+}
+
+.menu-item-input {
+  border: solid 1px var(--bg-item-color-selected);
+  background-color: transparent;
+  font-size: var(--font-size-items);
+  font-family: "Poppins", serif;
+  color: var(--text-color);
+}
+
+.menu-item-input:focus {
+  outline: none;
 }

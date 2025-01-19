@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import "./NestedMenuItem.css";
 import NestedMenuList from "../nestedmenu-list/NestedMenuList";
 import {
@@ -46,12 +46,12 @@ const NestedMenuItem = ({
 
   const handleTextClick = () => {
     console.log("Texto clicado");
-    setIsEditing(!isEditing); // Altera o estado.
+    setIsEditing(true); // Altera o estado.
   };
 
   const handleUpdateName = () => {
-    if (newName === name) return;
     setIsEditing(false);
+    if (newName === name) return;
     onUpdateName(id, newName);
   };
 
@@ -78,10 +78,17 @@ const NestedMenuItem = ({
           {setIcon(icon)}
           {isEditing ? (
             <input
+              autoFocus
+              className="menu-item-input"
               type="text"
-              placeholder={name}
+              value={newName}
               onBlur={handleUpdateName}
               onChange={(e) => setNewName(e.target.value)}
+              onKeyDown={(e) => {
+                if (e.key === "Enter") {
+                  handleUpdateName();
+                }
+              }}
             />
           ) : (
             <span onDoubleClick={handleTextClick}>{name}</span>
