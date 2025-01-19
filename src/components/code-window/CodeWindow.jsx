@@ -16,7 +16,7 @@ const CodeWindow = ({ code, onClose }) => {
         <X />
       </button>
       <h1>JSON</h1>
-      <pre>
+      <pre className="code-window-main">
         <code className="language-json">{code}</code>
       </pre>
     </div>

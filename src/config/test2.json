@@ -1,0 +1,18 @@
+[
+  {
+    "name": "Textual Content",
+    "icon": "Type",
+    "children": [
+      {
+        "name": "Paragraph",
+        "icon": "Type",
+        "children": []
+      },
+      {
+        "name": "Header",
+        "icon": "Image",
+        "children": []
+      }
+    ]
+  }
+]

@@ -22,7 +22,6 @@ export const findItemById = (items, targetId) => {
     if (items[i].id === targetId) {
       return { item: items[i], path: [i] };
     }
-
     if (items[i].children) {
       const result = findItemById(items[i].children, targetId);
       if (result) {
@@ -54,11 +53,18 @@ export const removeItemById = (items, targetId) => {
   if (result) return removeItemAtPath(items, result.path);
 };
 
+export const getItemDepth = (items, targetId) => {
+  const result = findItemById(items, targetId);
+  return result ? result.path.length - 1 : 0;
+};
+
 export const addItemToPath = (items, item, targetId) => {
   const newItems = [...items];
   const target = findItemById(newItems, targetId);
 
   if (target) {
+    const currentDepth = target.path.length - 1;
+
     if (!target.item.children) {
       target.item.children = [];
     }
@@ -76,12 +82,10 @@ export const updateItemName = (items, itemId, newName) => {
     let current = newItems;
     const path = target.path;
 
-    // Navigate to the parent of the target item
     for (let i = 0; i < path.length - 1; i++) {
       current = current[path[i]].children;
     }
 
-    // Update the name of the target item
     current[path[path.length - 1]] = {
       ...current[path[path.length - 1]],
       name: newName,

@@ -14,6 +14,7 @@ import {
   generateUUID,
   updateItemName,
   removeItemById,
+  getItemDepth,
 } from "../../hooks/nestedMenuUtils";
 import { Braces } from "lucide-react";
 import CodeWindow from "../code-window/CodeWindow";
@@ -43,6 +44,7 @@ const NestedMenu = ({ items }) => {
     const { active, over } = event;
 
     if (!over || active.id === over.id) return;
+    if (getItemDepth(data, over.id) >= 2) return; // limit to 2 levels
 
     const activeId = active.id;
     const overId = over.id;
@@ -54,8 +56,6 @@ const NestedMenu = ({ items }) => {
     const updatedItems = addItemToPath(newItems, removedItem, overId);
 
     setData(updatedItems);
-
-    console.log(updatedItems);
   };
 
   const handleHeaderClick = () => setHeaderVisibility(!headerState);
@@ -73,7 +73,6 @@ const NestedMenu = ({ items }) => {
 
   const handleRemoveItem = (id) => {
     const updatedItems = removeItemById(data, id);
-    console.log(updatedItems);
     setData(updatedItems.newItems);
   };
 
@@ -81,12 +80,12 @@ const NestedMenu = ({ items }) => {
 
   return (
     <DndContext sensors={sensors} onDragEnd={handleDragEnd}>
+      {dropdownState && (
+        <div className="add-dropdown">
+          <NestedMenuDropdown onClick={handleClickDropdown} />
+        </div>
+      )}
       <div className="main-div">
-        {dropdownState && (
-          <div className="add-dropdown">
-            <NestedMenuDropdown onClick={handleClickDropdown} />
-          </div>
-        )}
         <NestedMenuHeader
           onHeaderClick={handleHeaderClick}
           onAddClick={toggleDropdown}
@@ -101,14 +100,10 @@ const NestedMenu = ({ items }) => {
             onUpdateName={updateName}
           />
         </div>
-        <button
-          className="json-button"
-          onClick={() => setToggleCodeWindow(true)}
-        >
-          <Braces className="json-icon" />
-        </button>
       </div>
-
+      <button className="json-button" onClick={() => setToggleCodeWindow(true)}>
+        <Braces className="json-icon" />
+      </button>
       {toggleCodeWindow && (
         <div className="code-window">
           <CodeWindow

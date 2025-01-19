@@ -15,7 +15,7 @@
   --item-icon-size: 1em;
   --border-radius: 12px;
   --border-radius-item: 6px;
-  --font-size-code: 0.8rem;
+  --font-size-code: 1rem;
 }
 s * {
   font-family: "Poppins", serif;
@@ -28,7 +28,10 @@ body {
   background-color: #1d1d1d;
 }
 
+html {
+  font-size: 12px;
+}
+
 .main {
   height: 100vh;
 }
-

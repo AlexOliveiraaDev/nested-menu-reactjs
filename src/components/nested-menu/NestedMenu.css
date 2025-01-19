@@ -7,6 +7,8 @@
   justify-content: start;
   background-color: var(--bg-color);
   padding-right: 10px;
+  overflow-x: scroll;
+  overflow-y: visible;
 }
 
 .main-items-div {
@@ -15,9 +17,9 @@
 }
 
 .add-dropdown {
-  z-index: 2;
+  z-index: 3;
   position: absolute;
-  right: -250px;
+  left: 250px;
   top: 30px;
 }
 
@@ -47,9 +49,8 @@
 .code-window {
   width: 80%;
   height: 80%;
-  position: fixed;
+  position: absolute;
   top: 50%;
   left: 50%;
-  margin-top: -40%;
-  margin-left: -40%;
+  transform: translate(-50%, -50%);
 }
