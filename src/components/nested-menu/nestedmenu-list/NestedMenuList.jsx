@@ -1,7 +1,7 @@
 import React from "react";
 import NestedMenuItem from "../nestedmenu-Item/NestedMenuItem";
 
-const NestedMenuList = ({ items, onClickDelete }) => {
+const NestedMenuList = ({ items, onClickDelete, onUpdateName }) => {
   return (
     <div>
       {items.map((item) => (
@@ -12,6 +12,7 @@ const NestedMenuList = ({ items, onClickDelete }) => {
           icon={item.icon}
           children={item.children || []}
           onClickDelete={onClickDelete}
+          onUpdateName={onUpdateName}
         />
       ))}
     </div>

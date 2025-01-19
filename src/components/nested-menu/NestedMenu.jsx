@@ -12,7 +12,10 @@ import {
   removeItemAtPath,
   addItemToPath,
   generateUUID,
+  updateItemName,
+  removeItemById,
 } from "../../hooks/nestedMenuUtils";
+import { Braces } from "lucide-react";
 
 const NestedMenu = ({ items }) => {
   const [headerState, setHeaderVisibility] = useState(true);
@@ -49,6 +52,8 @@ const NestedMenu = ({ items }) => {
     const updatedItems = addItemToPath(newItems, removedItem, overId);
 
     setData(updatedItems);
+
+    console.log(updatedItems);
   };
 
   const handleHeaderClick = () => setHeaderVisibility(!headerState);
@@ -58,6 +63,17 @@ const NestedMenu = ({ items }) => {
       activationConstraint: { distance: 10 },
     })
   );
+
+  const updateName = (id, newName) => {
+    const updatedItems = updateItemName(data, id, newName);
+    setData(updatedItems);
+  };
+
+  const handleRemoveItem = (id) => {
+    const updatedItems = removeItemById(data, id);
+    console.log(updatedItems);
+    setData(updatedItems.newItems);
+  };
 
   return (
     <DndContext sensors={sensors} onDragEnd={handleDragEnd}>
@@ -77,10 +93,14 @@ const NestedMenu = ({ items }) => {
         >
           <NestedMenuList
             items={data}
-            onClickDelete={(id) => console.log("Clicou!", id)}
+            onClickDelete={(id) => handleRemoveItem(id)}
+            onUpdateName={updateName}
           />
         </div>
       </div>
+      <button className="json-button">
+        <Braces className="json-icon" />
+      </button>
     </DndContext>
   );
 };

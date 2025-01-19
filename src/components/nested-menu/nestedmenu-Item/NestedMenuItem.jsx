@@ -24,19 +24,38 @@ function setIcon(icon) {
   }
 }
 
-const NestedMenuItem = ({ id, name, icon, children, onClickDelete }) => {
+const NestedMenuItem = ({
+  id,
+  name,
+  icon,
+  children,
+  onClickDelete,
+  onUpdateName,
+}) => {
+  const { setNodeRef: setDroppableRef } = useDroppable({ id: id });
+  const [open, switchOpen] = useState(false);
+  const [isEditing, setIsEditing] = useState(false);
   const { attributes, listeners, setNodeRef, transform } = useDraggable({
     id: id,
   });
-  const { setNodeRef: setDroppableRef } = useDroppable({ id: id });
-
   const style = transform
     ? {
         transform: `translate3d(${transform.x}px, ${transform.y}px, 0)`,
       }
     : undefined;
 
-  const [open, switchOpen] = useState(false);
+  const handleTextClick = () => {
+    console.log("Texto clicado");
+    setIsEditing(!isEditing); // Altera o estado.
+  };
+
+  const handleUpdateName = () => {
+    if (newName === name) return;
+    setIsEditing(false);
+    onUpdateName(id, newName);
+  };
+
+  const [newName, setNewName] = useState(name);
 
   return (
     <div ref={setDroppableRef} className="menu-item-wrapper">
@@ -57,7 +76,16 @@ const NestedMenuItem = ({ id, name, icon, children, onClickDelete }) => {
 
           <div className="menu-item-gap"></div>
           {setIcon(icon)}
-          <span>{name}</span>
+          {isEditing ? (
+            <input
+              type="text"
+              placeholder={name}
+              onBlur={handleUpdateName}
+              onChange={(e) => setNewName(e.target.value)}
+            />
+          ) : (
+            <span onDoubleClick={handleTextClick}>{name}</span>
+          )}
 
           <div
             onClick={(e) => {
@@ -71,7 +99,11 @@ const NestedMenuItem = ({ id, name, icon, children, onClickDelete }) => {
 
         {children.length > 0 && open && (
           <div className="menu-item-children">
-            <NestedMenuList items={children} onClickDelete={onClickDelete} />
+            <NestedMenuList
+              items={children}
+              onClickDelete={onClickDelete}
+              onUpdateName={onUpdateName}
+            />
           </div>
         )}
       </div>
