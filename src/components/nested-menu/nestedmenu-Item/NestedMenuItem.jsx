@@ -45,7 +45,7 @@ const NestedMenuItem = ({
     : undefined;
 
   const handleTextClick = () => {
-    setIsEditing(true); // Altera o estado.
+    setIsEditing(true);
   };
 
   const handleUpdateName = () => {

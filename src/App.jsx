@@ -8,6 +8,7 @@ import test3 from "/src/config/test3.json";
 import test4 from "/src/config/test4.json";
 import test5 from "/src/config/test5.json";
 
+//colors of NestedMenu can be changed in variables in App.css
 function App() {
   return (
     <div className="main">

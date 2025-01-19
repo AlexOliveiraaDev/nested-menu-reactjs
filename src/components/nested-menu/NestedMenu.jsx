@@ -1,10 +1,13 @@
-import React from "react";
-import { useState } from "react";
+import React, { useState } from "react";
+import { DndContext, MouseSensor, useSensor, useSensors } from "@dnd-kit/core";
+import { Braces } from "lucide-react";
+
 import "./NestedMenu.css";
 import NestedMenuHeader from "./nestedmenu-header/NestedMenuHeader";
 import NestedMenuList from "./nestedmenu-list/NestedMenuList";
 import NestedMenuDropdown from "./nestedmenu-dropdown/NestedMenuDropdown";
-import { DndContext, MouseSensor, useSensor, useSensors } from "@dnd-kit/core";
+import CodeWindow from "../code-window/CodeWindow";
+
 import { useDropdownState } from "../../hooks/useDropdownState";
 import {
   addUniqueIds,
@@ -16,9 +19,6 @@ import {
   removeItemById,
   getItemDepth,
 } from "../../hooks/nestedMenuUtils";
-import { Braces } from "lucide-react";
-import CodeWindow from "../code-window/CodeWindow";
-import { use } from "react";
 
 const NestedMenu = ({ items }) => {
   const [headerState, setHeaderVisibility] = useState(true);
@@ -60,6 +60,7 @@ const NestedMenu = ({ items }) => {
 
   const handleHeaderClick = () => setHeaderVisibility(!headerState);
 
+  // constrains the drag not consume the click event
   const sensors = useSensors(
     useSensor(MouseSensor, {
       activationConstraint: { distance: 10 },
