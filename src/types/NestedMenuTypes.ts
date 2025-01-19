@@ -6,8 +6,8 @@ export interface Item {
 }
 
 export interface NestedMenuProps {
-  items: Item[];
-  newItem: Item;
+  items: any;
+  newItem?: Item;
 }
 
 export interface NestedMenuItemProps extends Item {

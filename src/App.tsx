@@ -1,18 +1,14 @@
 import { useState } from "react";
 import "./App.css";
 import NestedMenu from "./components/nested-menu/NestedMenu.tsx";
-import items from "/src/config/nested-config.json";
-import test1 from "/src/config/test1.json";
-import test2 from "/src/config/test2.json";
-import test3 from "/src/config/test3.json";
-import test4 from "/src/config/test4.json";
-import test5 from "/src/config/test5.json";
+//import menuConfig from "./config/testjson";
+import menuConfig from "./config/nested-config.json";
 
 //colors of NestedMenu can be changed in variables in App.css
 function App() {
   return (
     <div className="main">
-      <NestedMenu items={test1} />
+      <NestedMenu items={menuConfig} />
     </div>
   );
 }
