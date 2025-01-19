@@ -1,0 +1,1714 @@
+[
+  {
+    "name": "Dashboard",
+    "icon": "SquareDashed",
+    "children": [
+      {
+        "name": "User Management",
+        "icon": "Image",
+        "children": [
+          {
+            "name": "Users List",
+            "icon": "Type",
+            "children": [
+              {
+                "name": "Active Users",
+                "icon": "SquareDashed",
+                "children": []
+              },
+              {
+                "name": "Inactive Users",
+                "icon": "Image",
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "Role Management",
+            "icon": "SquareDashed",
+            "children": [
+              {
+                "name": "Admin Roles",
+                "icon": "Type",
+                "children": []
+              },
+              {
+                "name": "Editor Roles",
+                "icon": "Image",
+                "children": []
+              },
+              {
+                "name": "Viewer Roles",
+                "icon": "SquareDashed",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Content Management",
+        "icon": "Image",
+        "children": [
+          {
+            "name": "Articles",
+            "icon": "Type",
+            "children": [
+              {
+                "name": "Published Articles",
+                "icon": "SquareDashed",
+                "children": []
+              },
+              {
+                "name": "Draft Articles",
+                "icon": "Image",
+                "children": []
+              },
+              {
+                "name": "Archived Articles",
+                "icon": "Type",
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "Media Library",
+            "icon": "SquareDashed",
+            "children": [
+              {
+                "name": "Images",
+                "icon": "Image",
+                "children": []
+              },
+              {
+                "name": "Videos",
+                "icon": "Type",
+                "children": []
+              },
+              {
+                "name": "Audio",
+                "icon": "SquareDashed",
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "Categories",
+            "icon": "Type",
+            "children": [
+              {
+                "name": "Technology",
+                "icon": "Image",
+                "children": []
+              },
+              {
+                "name": "Health",
+                "icon": "SquareDashed",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Analytics",
+        "icon": "Image",
+        "children": [
+          {
+            "name": "Traffic Analysis",
+            "icon": "SquareDashed",
+            "children": [
+              {
+                "name": "Page Views",
+                "icon": "Type",
+                "children": []
+              },
+              {
+                "name": "Bounce Rate",
+                "icon": "Image",
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "User Engagement",
+            "icon": "Type",
+            "children": [
+              {
+                "name": "Likes",
+                "icon": "SquareDashed",
+                "children": []
+              },
+              {
+                "name": "Comments",
+                "icon": "Image",
+                "children": []
+              },
+              {
+                "name": "Shares",
+                "icon": "Type",
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "Revenue",
+            "icon": "SquareDashed",
+            "children": [
+              {
+                "name": "Monthly Revenue",
+                "icon": "Image",
+                "children": []
+              },
+              {
+                "name": "Yearly Revenue",
+                "icon": "Type",
+                "children": []
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Settings",
+    "icon": "SquareDashed",
+    "children": [
+      {
+        "name": "General Settings",
+        "icon": "Image",
+        "children": [
+          {
+            "name": "Site Name",
+            "icon": "Type",
+            "children": []
+          },
+          {
+            "name": "Site Logo",
+            "icon": "Image",
+            "children": []
+          }
+        ]
+      },
+      {
+        "name": "Appearance",
+        "icon": "Type",
+        "children": [
+          {
+            "name": "Themes",
+            "icon": "SquareDashed",
+            "children": [
+              {
+                "name": "Light Theme",
+                "icon": "Image",
+                "children": []
+              },
+              {
+                "name": "Dark Theme",
+                "icon": "Type",
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "Fonts",
+            "icon": "SquareDashed",
+            "children": [
+              {
+                "name": "Roboto",
+                "icon": "Image",
+                "children": []
+              },
+              {
+                "name": "Arial",
+                "icon": "Type",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Security",
+        "icon": "SquareDashed",
+        "children": [
+          {
+            "name": "Two-Factor Authentication",
+            "icon": "Image",
+            "children": []
+          },
+          {
+            "name": "Password Policies",
+            "icon": "Type",
+            "children": []
+          },
+          {
+            "name": "IP Whitelist",
+            "icon": "SquareDashed",
+            "children": []
+          }
+        ]
+      },
+      {
+        "name": "Backup",
+        "icon": "Type",
+        "children": [
+          {
+            "name": "Database Backup",
+            "icon": "SquareDashed",
+            "children": []
+          },
+          {
+            "name": "File Backup",
+            "icon": "Image",
+            "children": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Support",
+    "icon": "Image",
+    "children": [
+      {
+        "name": "FAQs",
+        "icon": "Type",
+        "children": []
+      },
+      {
+        "name": "Live Chat",
+        "icon": "SquareDashed",
+        "children": []
+      },
+      {
+        "name": "Submit a Ticket",
+        "icon": "Image",
+        "children": []
+      },
+      {
+        "name": "Knowledge Base",
+        "icon": "SquareDashed",
+        "children": [
+          {
+            "name": "How to Use the Dashboard",
+            "icon": "Image",
+            "children": []
+          },
+          {
+            "name": "Troubleshooting",
+            "icon": "Type",
+            "children": []
+          },
+          {
+            "name": "Account Setup",
+            "icon": "SquareDashed",
+            "children": []
+          }
+        ]
+      },
+      {
+        "name": "Documentation",
+        "icon": "Image",
+        "children": []
+      }
+    ]
+  },
+  {
+    "name": "Reports",
+    "icon": "Type",
+    "children": [
+      {
+        "name": "Sales Report",
+        "icon": "Image",
+        "children": [
+          {
+            "name": "Daily Sales",
+            "icon": "SquareDashed",
+            "children": []
+          },
+          {
+            "name": "Weekly Sales",
+            "icon": "Type",
+            "children": []
+          },
+          {
+            "name": "Monthly Sales",
+            "icon": "Image",
+            "children": []
+          }
+        ]
+      },
+      {
+        "name": "User Activity Report",
+        "icon": "SquareDashed",
+        "children": [
+          {
+            "name": "Login History",
+            "icon": "Image",
+            "children": []
+          },
+          {
+            "name": "Action Logs",
+            "icon": "Type",
+            "children": []
+          },
+          {
+            "name": "Profile Changes",
+            "icon": "SquareDashed",
+            "children": []
+          }
+        ]
+      },
+      {
+        "name": "System Report",
+        "icon": "Image",
+        "children": [
+          {
+            "name": "System Health",
+            "icon": "SquareDashed",
+            "children": []
+          },
+          {
+            "name": "Error Logs",
+            "icon": "Type",
+            "children": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Notifications",
+    "icon": "SquareDashed",
+    "children": [
+      {
+        "name": "Alerts",
+        "icon": "Image",
+        "children": [
+          {
+            "name": "Critical Alerts",
+            "icon": "Type",
+            "children": []
+          },
+          {
+            "name": "Warning Alerts",
+            "icon": "SquareDashed",
+            "children": []
+          }
+        ]
+      },
+      {
+        "name": "Messages",
+        "icon": "Type",
+        "children": []
+      },
+      {
+        "name": "System Updates",
+        "icon": "SquareDashed",
+        "children": []
+      },
+      {
+        "name": "User Notifications",
+        "icon": "Image",
+        "children": [
+          {
+            "name": "Email Notifications",
+            "icon": "SquareDashed",
+            "children": []
+          },
+          {
+            "name": "Push Notifications",
+            "icon": "Type",
+            "children": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Dashboard",
+    "icon": "SquareDashed",
+    "children": [
+      {
+        "name": "User Management",
+        "icon": "Image",
+        "children": [
+          {
+            "name": "Users List",
+            "icon": "Type",
+            "children": [
+              {
+                "name": "Active Users",
+                "icon": "SquareDashed",
+                "children": []
+              },
+              {
+                "name": "Inactive Users",
+                "icon": "Image",
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "Role Management",
+            "icon": "SquareDashed",
+            "children": [
+              {
+                "name": "Admin Roles",
+                "icon": "Type",
+                "children": []
+              },
+              {
+                "name": "Editor Roles",
+                "icon": "Image",
+                "children": []
+              },
+              {
+                "name": "Viewer Roles",
+                "icon": "SquareDashed",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Content Management",
+        "icon": "Image",
+        "children": [
+          {
+            "name": "Articles",
+            "icon": "Type",
+            "children": [
+              {
+                "name": "Published Articles",
+                "icon": "SquareDashed",
+                "children": []
+              },
+              {
+                "name": "Draft Articles",
+                "icon": "Image",
+                "children": []
+              },
+              {
+                "name": "Archived Articles",
+                "icon": "Type",
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "Media Library",
+            "icon": "SquareDashed",
+            "children": [
+              {
+                "name": "Images",
+                "icon": "Image",
+                "children": []
+              },
+              {
+                "name": "Videos",
+                "icon": "Type",
+                "children": []
+              },
+              {
+                "name": "Audio",
+                "icon": "SquareDashed",
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "Categories",
+            "icon": "Type",
+            "children": [
+              {
+                "name": "Technology",
+                "icon": "Image",
+                "children": []
+              },
+              {
+                "name": "Health",
+                "icon": "SquareDashed",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Analytics",
+        "icon": "Image",
+        "children": [
+          {
+            "name": "Traffic Analysis",
+            "icon": "SquareDashed",
+            "children": [
+              {
+                "name": "Page Views",
+                "icon": "Type",
+                "children": []
+              },
+              {
+                "name": "Bounce Rate",
+                "icon": "Image",
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "User Engagement",
+            "icon": "Type",
+            "children": [
+              {
+                "name": "Likes",
+                "icon": "SquareDashed",
+                "children": []
+              },
+              {
+                "name": "Comments",
+                "icon": "Image",
+                "children": []
+              },
+              {
+                "name": "Shares",
+                "icon": "Type",
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "Revenue",
+            "icon": "SquareDashed",
+            "children": [
+              {
+                "name": "Monthly Revenue",
+                "icon": "Image",
+                "children": []
+              },
+              {
+                "name": "Yearly Revenue",
+                "icon": "Type",
+                "children": []
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Settings",
+    "icon": "SquareDashed",
+    "children": [
+      {
+        "name": "General Settings",
+        "icon": "Image",
+        "children": [
+          {
+            "name": "Site Name",
+            "icon": "Type",
+            "children": []
+          },
+          {
+            "name": "Site Logo",
+            "icon": "Image",
+            "children": []
+          }
+        ]
+      },
+      {
+        "name": "Appearance",
+        "icon": "Type",
+        "children": [
+          {
+            "name": "Themes",
+            "icon": "SquareDashed",
+            "children": [
+              {
+                "name": "Light Theme",
+                "icon": "Image",
+                "children": []
+              },
+              {
+                "name": "Dark Theme",
+                "icon": "Type",
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "Fonts",
+            "icon": "SquareDashed",
+            "children": [
+              {
+                "name": "Roboto",
+                "icon": "Image",
+                "children": []
+              },
+              {
+                "name": "Arial",
+                "icon": "Type",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Security",
+        "icon": "SquareDashed",
+        "children": [
+          {
+            "name": "Two-Factor Authentication",
+            "icon": "Image",
+            "children": []
+          },
+          {
+            "name": "Password Policies",
+            "icon": "Type",
+            "children": []
+          },
+          {
+            "name": "IP Whitelist",
+            "icon": "SquareDashed",
+            "children": []
+          }
+        ]
+      },
+      {
+        "name": "Backup",
+        "icon": "Type",
+        "children": [
+          {
+            "name": "Database Backup",
+            "icon": "SquareDashed",
+            "children": []
+          },
+          {
+            "name": "File Backup",
+            "icon": "Image",
+            "children": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Support",
+    "icon": "Image",
+    "children": [
+      {
+        "name": "FAQs",
+        "icon": "Type",
+        "children": []
+      },
+      {
+        "name": "Live Chat",
+        "icon": "SquareDashed",
+        "children": []
+      },
+      {
+        "name": "Submit a Ticket",
+        "icon": "Image",
+        "children": []
+      },
+      {
+        "name": "Knowledge Base",
+        "icon": "SquareDashed",
+        "children": [
+          {
+            "name": "How to Use the Dashboard",
+            "icon": "Image",
+            "children": []
+          },
+          {
+            "name": "Troubleshooting",
+            "icon": "Type",
+            "children": []
+          },
+          {
+            "name": "Account Setup",
+            "icon": "SquareDashed",
+            "children": []
+          }
+        ]
+      },
+      {
+        "name": "Documentation",
+        "icon": "Image",
+        "children": []
+      }
+    ]
+  },
+  {
+    "name": "Reports",
+    "icon": "Type",
+    "children": [
+      {
+        "name": "Sales Report",
+        "icon": "Image",
+        "children": [
+          {
+            "name": "Daily Sales",
+            "icon": "SquareDashed",
+            "children": []
+          },
+          {
+            "name": "Weekly Sales",
+            "icon": "Type",
+            "children": []
+          },
+          {
+            "name": "Monthly Sales",
+            "icon": "Image",
+            "children": []
+          }
+        ]
+      },
+      {
+        "name": "User Activity Report",
+        "icon": "SquareDashed",
+        "children": [
+          {
+            "name": "Login History",
+            "icon": "Image",
+            "children": []
+          },
+          {
+            "name": "Action Logs",
+            "icon": "Type",
+            "children": []
+          },
+          {
+            "name": "Profile Changes",
+            "icon": "SquareDashed",
+            "children": []
+          }
+        ]
+      },
+      {
+        "name": "System Report",
+        "icon": "Image",
+        "children": [
+          {
+            "name": "System Health",
+            "icon": "SquareDashed",
+            "children": []
+          },
+          {
+            "name": "Error Logs",
+            "icon": "Type",
+            "children": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Notifications",
+    "icon": "SquareDashed",
+    "children": [
+      {
+        "name": "Alerts",
+        "icon": "Image",
+        "children": [
+          {
+            "name": "Critical Alerts",
+            "icon": "Type",
+            "children": []
+          },
+          {
+            "name": "Warning Alerts",
+            "icon": "SquareDashed",
+            "children": []
+          }
+        ]
+      },
+      {
+        "name": "Messages",
+        "icon": "Type",
+        "children": []
+      },
+      {
+        "name": "System Updates",
+        "icon": "SquareDashed",
+        "children": []
+      },
+      {
+        "name": "User Notifications",
+        "icon": "Image",
+        "children": [
+          {
+            "name": "Email Notifications",
+            "icon": "SquareDashed",
+            "children": []
+          },
+          {
+            "name": "Push Notifications",
+            "icon": "Type",
+            "children": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Dashboard",
+    "icon": "SquareDashed",
+    "children": [
+      {
+        "name": "User Management",
+        "icon": "Image",
+        "children": [
+          {
+            "name": "Users List",
+            "icon": "Type",
+            "children": [
+              {
+                "name": "Active Users",
+                "icon": "SquareDashed",
+                "children": []
+              },
+              {
+                "name": "Inactive Users",
+                "icon": "Image",
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "Role Management",
+            "icon": "SquareDashed",
+            "children": [
+              {
+                "name": "Admin Roles",
+                "icon": "Type",
+                "children": []
+              },
+              {
+                "name": "Editor Roles",
+                "icon": "Image",
+                "children": []
+              },
+              {
+                "name": "Viewer Roles",
+                "icon": "SquareDashed",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Content Management",
+        "icon": "Image",
+        "children": [
+          {
+            "name": "Articles",
+            "icon": "Type",
+            "children": [
+              {
+                "name": "Published Articles",
+                "icon": "SquareDashed",
+                "children": []
+              },
+              {
+                "name": "Draft Articles",
+                "icon": "Image",
+                "children": []
+              },
+              {
+                "name": "Archived Articles",
+                "icon": "Type",
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "Media Library",
+            "icon": "SquareDashed",
+            "children": [
+              {
+                "name": "Images",
+                "icon": "Image",
+                "children": []
+              },
+              {
+                "name": "Videos",
+                "icon": "Type",
+                "children": []
+              },
+              {
+                "name": "Audio",
+                "icon": "SquareDashed",
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "Categories",
+            "icon": "Type",
+            "children": [
+              {
+                "name": "Technology",
+                "icon": "Image",
+                "children": []
+              },
+              {
+                "name": "Health",
+                "icon": "SquareDashed",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Analytics",
+        "icon": "Image",
+        "children": [
+          {
+            "name": "Traffic Analysis",
+            "icon": "SquareDashed",
+            "children": [
+              {
+                "name": "Page Views",
+                "icon": "Type",
+                "children": []
+              },
+              {
+                "name": "Bounce Rate",
+                "icon": "Image",
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "User Engagement",
+            "icon": "Type",
+            "children": [
+              {
+                "name": "Likes",
+                "icon": "SquareDashed",
+                "children": []
+              },
+              {
+                "name": "Comments",
+                "icon": "Image",
+                "children": []
+              },
+              {
+                "name": "Shares",
+                "icon": "Type",
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "Revenue",
+            "icon": "SquareDashed",
+            "children": [
+              {
+                "name": "Monthly Revenue",
+                "icon": "Image",
+                "children": []
+              },
+              {
+                "name": "Yearly Revenue",
+                "icon": "Type",
+                "children": []
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Settings",
+    "icon": "SquareDashed",
+    "children": [
+      {
+        "name": "General Settings",
+        "icon": "Image",
+        "children": [
+          {
+            "name": "Site Name",
+            "icon": "Type",
+            "children": []
+          },
+          {
+            "name": "Site Logo",
+            "icon": "Image",
+            "children": []
+          }
+        ]
+      },
+      {
+        "name": "Appearance",
+        "icon": "Type",
+        "children": [
+          {
+            "name": "Themes",
+            "icon": "SquareDashed",
+            "children": [
+              {
+                "name": "Light Theme",
+                "icon": "Image",
+                "children": []
+              },
+              {
+                "name": "Dark Theme",
+                "icon": "Type",
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "Fonts",
+            "icon": "SquareDashed",
+            "children": [
+              {
+                "name": "Roboto",
+                "icon": "Image",
+                "children": []
+              },
+              {
+                "name": "Arial",
+                "icon": "Type",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Security",
+        "icon": "SquareDashed",
+        "children": [
+          {
+            "name": "Two-Factor Authentication",
+            "icon": "Image",
+            "children": []
+          },
+          {
+            "name": "Password Policies",
+            "icon": "Type",
+            "children": []
+          },
+          {
+            "name": "IP Whitelist",
+            "icon": "SquareDashed",
+            "children": []
+          }
+        ]
+      },
+      {
+        "name": "Backup",
+        "icon": "Type",
+        "children": [
+          {
+            "name": "Database Backup",
+            "icon": "SquareDashed",
+            "children": []
+          },
+          {
+            "name": "File Backup",
+            "icon": "Image",
+            "children": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Support",
+    "icon": "Image",
+    "children": [
+      {
+        "name": "FAQs",
+        "icon": "Type",
+        "children": []
+      },
+      {
+        "name": "Live Chat",
+        "icon": "SquareDashed",
+        "children": []
+      },
+      {
+        "name": "Submit a Ticket",
+        "icon": "Image",
+        "children": []
+      },
+      {
+        "name": "Knowledge Base",
+        "icon": "SquareDashed",
+        "children": [
+          {
+            "name": "How to Use the Dashboard",
+            "icon": "Image",
+            "children": []
+          },
+          {
+            "name": "Troubleshooting",
+            "icon": "Type",
+            "children": []
+          },
+          {
+            "name": "Account Setup",
+            "icon": "SquareDashed",
+            "children": []
+          }
+        ]
+      },
+      {
+        "name": "Documentation",
+        "icon": "Image",
+        "children": []
+      }
+    ]
+  },
+  {
+    "name": "Reports",
+    "icon": "Type",
+    "children": [
+      {
+        "name": "Sales Report",
+        "icon": "Image",
+        "children": [
+          {
+            "name": "Daily Sales",
+            "icon": "SquareDashed",
+            "children": []
+          },
+          {
+            "name": "Weekly Sales",
+            "icon": "Type",
+            "children": []
+          },
+          {
+            "name": "Monthly Sales",
+            "icon": "Image",
+            "children": []
+          }
+        ]
+      },
+      {
+        "name": "User Activity Report",
+        "icon": "SquareDashed",
+        "children": [
+          {
+            "name": "Login History",
+            "icon": "Image",
+            "children": []
+          },
+          {
+            "name": "Action Logs",
+            "icon": "Type",
+            "children": []
+          },
+          {
+            "name": "Profile Changes",
+            "icon": "SquareDashed",
+            "children": []
+          }
+        ]
+      },
+      {
+        "name": "System Report",
+        "icon": "Image",
+        "children": [
+          {
+            "name": "System Health",
+            "icon": "SquareDashed",
+            "children": []
+          },
+          {
+            "name": "Error Logs",
+            "icon": "Type",
+            "children": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Notifications",
+    "icon": "SquareDashed",
+    "children": [
+      {
+        "name": "Alerts",
+        "icon": "Image",
+        "children": [
+          {
+            "name": "Critical Alerts",
+            "icon": "Type",
+            "children": []
+          },
+          {
+            "name": "Warning Alerts",
+            "icon": "SquareDashed",
+            "children": []
+          }
+        ]
+      },
+      {
+        "name": "Messages",
+        "icon": "Type",
+        "children": []
+      },
+      {
+        "name": "System Updates",
+        "icon": "SquareDashed",
+        "children": []
+      },
+      {
+        "name": "User Notifications",
+        "icon": "Image",
+        "children": [
+          {
+            "name": "Email Notifications",
+            "icon": "SquareDashed",
+            "children": []
+          },
+          {
+            "name": "Push Notifications",
+            "icon": "Type",
+            "children": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Dashboard",
+    "icon": "SquareDashed",
+    "children": [
+      {
+        "name": "User Management",
+        "icon": "Image",
+        "children": [
+          {
+            "name": "Users List",
+            "icon": "Type",
+            "children": [
+              {
+                "name": "Active Users",
+                "icon": "SquareDashed",
+                "children": []
+              },
+              {
+                "name": "Inactive Users",
+                "icon": "Image",
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "Role Management",
+            "icon": "SquareDashed",
+            "children": [
+              {
+                "name": "Admin Roles",
+                "icon": "Type",
+                "children": []
+              },
+              {
+                "name": "Editor Roles",
+                "icon": "Image",
+                "children": []
+              },
+              {
+                "name": "Viewer Roles",
+                "icon": "SquareDashed",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Content Management",
+        "icon": "Image",
+        "children": [
+          {
+            "name": "Articles",
+            "icon": "Type",
+            "children": [
+              {
+                "name": "Published Articles",
+                "icon": "SquareDashed",
+                "children": []
+              },
+              {
+                "name": "Draft Articles",
+                "icon": "Image",
+                "children": []
+              },
+              {
+                "name": "Archived Articles",
+                "icon": "Type",
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "Media Library",
+            "icon": "SquareDashed",
+            "children": [
+              {
+                "name": "Images",
+                "icon": "Image",
+                "children": []
+              },
+              {
+                "name": "Videos",
+                "icon": "Type",
+                "children": []
+              },
+              {
+                "name": "Audio",
+                "icon": "SquareDashed",
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "Categories",
+            "icon": "Type",
+            "children": [
+              {
+                "name": "Technology",
+                "icon": "Image",
+                "children": []
+              },
+              {
+                "name": "Health",
+                "icon": "SquareDashed",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Analytics",
+        "icon": "Image",
+        "children": [
+          {
+            "name": "Traffic Analysis",
+            "icon": "SquareDashed",
+            "children": [
+              {
+                "name": "Page Views",
+                "icon": "Type",
+                "children": []
+              },
+              {
+                "name": "Bounce Rate",
+                "icon": "Image",
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "User Engagement",
+            "icon": "Type",
+            "children": [
+              {
+                "name": "Likes",
+                "icon": "SquareDashed",
+                "children": []
+              },
+              {
+                "name": "Comments",
+                "icon": "Image",
+                "children": []
+              },
+              {
+                "name": "Shares",
+                "icon": "Type",
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "Revenue",
+            "icon": "SquareDashed",
+            "children": [
+              {
+                "name": "Monthly Revenue",
+                "icon": "Image",
+                "children": []
+              },
+              {
+                "name": "Yearly Revenue",
+                "icon": "Type",
+                "children": []
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Settings",
+    "icon": "SquareDashed",
+    "children": [
+      {
+        "name": "General Settings",
+        "icon": "Image",
+        "children": [
+          {
+            "name": "Site Name",
+            "icon": "Type",
+            "children": []
+          },
+          {
+            "name": "Site Logo",
+            "icon": "Image",
+            "children": []
+          }
+        ]
+      },
+      {
+        "name": "Appearance",
+        "icon": "Type",
+        "children": [
+          {
+            "name": "Themes",
+            "icon": "SquareDashed",
+            "children": [
+              {
+                "name": "Light Theme",
+                "icon": "Image",
+                "children": []
+              },
+              {
+                "name": "Dark Theme",
+                "icon": "Type",
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "Fonts",
+            "icon": "SquareDashed",
+            "children": [
+              {
+                "name": "Roboto",
+                "icon": "Image",
+                "children": []
+              },
+              {
+                "name": "Arial",
+                "icon": "Type",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Security",
+        "icon": "SquareDashed",
+        "children": [
+          {
+            "name": "Two-Factor Authentication",
+            "icon": "Image",
+            "children": []
+          },
+          {
+            "name": "Password Policies",
+            "icon": "Type",
+            "children": []
+          },
+          {
+            "name": "IP Whitelist",
+            "icon": "SquareDashed",
+            "children": []
+          }
+        ]
+      },
+      {
+        "name": "Backup",
+        "icon": "Type",
+        "children": [
+          {
+            "name": "Database Backup",
+            "icon": "SquareDashed",
+            "children": []
+          },
+          {
+            "name": "File Backup",
+            "icon": "Image",
+            "children": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Support",
+    "icon": "Image",
+    "children": [
+      {
+        "name": "FAQs",
+        "icon": "Type",
+        "children": []
+      },
+      {
+        "name": "Live Chat",
+        "icon": "SquareDashed",
+        "children": []
+      },
+      {
+        "name": "Submit a Ticket",
+        "icon": "Image",
+        "children": []
+      },
+      {
+        "name": "Knowledge Base",
+        "icon": "SquareDashed",
+        "children": [
+          {
+            "name": "How to Use the Dashboard",
+            "icon": "Image",
+            "children": []
+          },
+          {
+            "name": "Troubleshooting",
+            "icon": "Type",
+            "children": []
+          },
+          {
+            "name": "Account Setup",
+            "icon": "SquareDashed",
+            "children": []
+          }
+        ]
+      },
+      {
+        "name": "Documentation",
+        "icon": "Image",
+        "children": []
+      }
+    ]
+  },
+  {
+    "name": "Reports",
+    "icon": "Type",
+    "children": [
+      {
+        "name": "Sales Report",
+        "icon": "Image",
+        "children": [
+          {
+            "name": "Daily Sales",
+            "icon": "SquareDashed",
+            "children": []
+          },
+          {
+            "name": "Weekly Sales",
+            "icon": "Type",
+            "children": []
+          },
+          {
+            "name": "Monthly Sales",
+            "icon": "Image",
+            "children": []
+          }
+        ]
+      },
+      {
+        "name": "User Activity Report",
+        "icon": "SquareDashed",
+        "children": [
+          {
+            "name": "Login History",
+            "icon": "Image",
+            "children": []
+          },
+          {
+            "name": "Action Logs",
+            "icon": "Type",
+            "children": []
+          },
+          {
+            "name": "Profile Changes",
+            "icon": "SquareDashed",
+            "children": []
+          }
+        ]
+      },
+      {
+        "name": "System Report",
+        "icon": "Image",
+        "children": [
+          {
+            "name": "System Health",
+            "icon": "SquareDashed",
+            "children": []
+          },
+          {
+            "name": "Error Logs",
+            "icon": "Type",
+            "children": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Notifications",
+    "icon": "SquareDashed",
+    "children": [
+      {
+        "name": "Alerts",
+        "icon": "Image",
+        "children": [
+          {
+            "name": "Critical Alerts",
+            "icon": "Type",
+            "children": []
+          },
+          {
+            "name": "Warning Alerts",
+            "icon": "SquareDashed",
+            "children": []
+          }
+        ]
+      },
+      {
+        "name": "Messages",
+        "icon": "Type",
+        "children": []
+      },
+      {
+        "name": "System Updates",
+        "icon": "SquareDashed",
+        "children": []
+      },
+      {
+        "name": "User Notifications",
+        "icon": "Image",
+        "children": [
+          {
+            "name": "Email Notifications",
+            "icon": "SquareDashed",
+            "children": []
+          },
+          {
+            "name": "Push Notifications",
+            "icon": "Type",
+            "children": []
+          }
+        ]
+      }
+    ]
+  }
+]

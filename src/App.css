@@ -1,15 +1,23 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;1,400;1,700&display=swap");
 
-
 :root {
   --bg-color: #2c2c2c;
-  --bg-color-overlay: #373737;
+  --bg-color-overlay: #383838;
+  --border-color: #444444;
   --text-color: white;
   --bg-color-active: #606060;
-}s
+  --bg-item-color-selected: #0c8ce9;
+  --item-icon-color: #a1a1a1;
+  --dropdown-background-color: #1e1e1e;
+  --dropdown-background-item-hover: #096ab0;
 
-
-* {
+  --font-size-items: 1rem;
+  --item-icon-size: 1em;
+  --border-radius: 12px;
+  --border-radius-item: 6px;
+  --font-size-code: 1rem;
+}
+s * {
   font-family: "Poppins", serif;
 }
 
@@ -17,6 +25,11 @@ body {
   margin: 0px;
   padding: 0px;
   font-family: "Poppins", sans-serif;
+  background-color: #1d1d1d;
+}
+
+html {
+  font-size: 12px;
 }
 
 .main {

@@ -1,0 +1,88 @@
+.menu-item-main-div {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  color: var(--text-color);
+  font-weight: 400;
+  font-size: var(--font-size-items);
+  gap: 5px;
+  margin-left: 20px;
+}
+
+.menu-item-icon {
+  margin-left: 5px;
+  height: var(--item-icon-size);
+  width: var(--item-icon-size);
+  color: var(--item-icon-color);
+}
+
+.menu-item-row {
+  position: relative;
+  width: 100%;
+  padding: 5px 0px 5px 0px;
+  border-radius: 10px;
+  margin: 2px 0px 2px 0px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.05s ease-in-out;
+}
+
+.menu-item-arrow {
+  display: none;
+  position: absolute;
+  left: 0px;
+  margin-left: 5px;
+  width: var(--item-icon-size);
+  height: var(--item-icon-size);
+}
+
+.main-div:hover .menu-item-arrow {
+  display: block;
+}
+.menu-item-row:hover {
+  background-color: var(--bg-color-active);
+}
+
+.menu-item-children {
+  width: 100%;
+}
+
+.menu-item-delete {
+  display: none;
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: all 0.1s ease-in-out;
+}
+
+.menu-item-delete:hover {
+  cursor: pointer;
+  color: var(--text-color);
+}
+
+.menu-item-delete:active {
+  color: red;
+}
+
+.menu-item-row:hover .menu-item-delete {
+  display: block;
+}
+
+.menu-item-gap {
+  width: 10px;
+}
+
+.menu-item-input {
+  border: solid 1px var(--bg-item-color-selected);
+  background-color: transparent;
+  font-size: var(--font-size-items);
+  font-family: "Poppins", serif;
+  color: var(--text-color);
+}
+
+.menu-item-input:focus {
+  outline: none;
+}

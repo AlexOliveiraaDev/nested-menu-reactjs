@@ -1,0 +1,29 @@
+[
+  {
+    "name": "Layout Structure",
+    "icon": "SquareDashed",
+    "children": [
+      {
+        "name": "Grid System",
+        "icon": "Type",
+        "children": []
+      },
+      {
+        "name": "Flexbox Layout",
+        "icon": "SquareDashed",
+        "children": [
+          {
+            "name": "Row Layout",
+            "icon": "Image",
+            "children": []
+          },
+          {
+            "name": "Column Layout",
+            "icon": "Type",
+            "children": []
+          }
+        ]
+      }
+    ]
+  }
+]
