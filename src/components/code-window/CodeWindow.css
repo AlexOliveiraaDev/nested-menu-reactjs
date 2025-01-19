@@ -1,0 +1,51 @@
+.code-window {
+  background-color: aliceblue;
+  height: 80dvh;
+  width: 80dvw;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  font-size: var(--font-size-code);
+  border: solid 1px var(--bg-item-color-selected);
+  background-color: #2d2d2d;
+  padding: 20px;
+  filter: drop-shadow(0px 10px 20px rgba(0, 0, 0, 0.15));
+  z-index: 3;
+}
+
+.close-button {
+  position: absolute;
+  top: 20px;
+  right: 10px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  color: var(--text-color);
+  transition: all 0.05s ease-in-out;
+}
+
+.close-button:hover {
+  color: var(--bg-item-color-active);
+}
+
+h1 {
+  color: var(--text-color);
+  font-weight: 400;
+  font-size: 1.5rem;
+}
+
+/* Trilha da barra de rolagem */
+::-webkit-scrollbar {
+  width: 1em;
+}
+
+::-webkit-scrollbar-track {
+  margin-block: 1em;
+  background: #2d2d2d;
+  width: 1em;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--bg-color-active);
+  border-radius: 100vw;
+  border: 3px solid #2d2d2d;
+}

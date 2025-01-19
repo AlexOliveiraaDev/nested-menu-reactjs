@@ -9,12 +9,13 @@
   --bg-item-color-selected: #0c8ce9;
   --item-icon-color: #a1a1a1;
   --dropdown-background-color: #1e1e1e;
-  --dropdown-background-item-hover: #0c8ce9;
+  --dropdown-background-item-hover: #096ab0;
 
   --font-size-items: 1rem;
   --item-icon-size: 1em;
   --border-radius: 12px;
   --border-radius-item: 6px;
+  --font-size-code: 0.8rem;
 }
 s * {
   font-family: "Poppins", serif;
@@ -30,3 +31,4 @@ body {
 .main {
   height: 100vh;
 }
+

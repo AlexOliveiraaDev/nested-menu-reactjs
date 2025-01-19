@@ -16,6 +16,8 @@ import {
   removeItemById,
 } from "../../hooks/nestedMenuUtils";
 import { Braces } from "lucide-react";
+import CodeWindow from "../code-window/CodeWindow";
+import { use } from "react";
 
 const NestedMenu = ({ items }) => {
   const [headerState, setHeaderVisibility] = useState(true);
@@ -75,6 +77,8 @@ const NestedMenu = ({ items }) => {
     setData(updatedItems.newItems);
   };
 
+  const [toggleCodeWindow, setToggleCodeWindow] = useState(false);
+
   return (
     <DndContext sensors={sensors} onDragEnd={handleDragEnd}>
       <div className="main-div">
@@ -97,10 +101,22 @@ const NestedMenu = ({ items }) => {
             onUpdateName={updateName}
           />
         </div>
+        <button
+          className="json-button"
+          onClick={() => setToggleCodeWindow(true)}
+        >
+          <Braces className="json-icon" />
+        </button>
       </div>
-      <button className="json-button">
-        <Braces className="json-icon" />
-      </button>
+
+      {toggleCodeWindow && (
+        <div className="code-window">
+          <CodeWindow
+            code={JSON.stringify(data, null, 2)}
+            onClose={() => setToggleCodeWindow(false)}
+          />
+        </div>
+      )}
     </DndContext>
   );
 };
