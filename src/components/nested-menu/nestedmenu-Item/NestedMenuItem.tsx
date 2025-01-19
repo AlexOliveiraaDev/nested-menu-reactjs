@@ -2,14 +2,7 @@ import React, { useState } from "react";
 import { NestedMenuItemProps } from "../../../types/NestedMenuTypes";
 import "./NestedMenuItem.css";
 import NestedMenuList from "../nestedmenu-list/NestedMenuList";
-import {
-  SquareDashed,
-  Type,
-  Image,
-  ChevronDown,
-  ChevronRight,
-  Trash2,
-} from "lucide-react";
+import { SquareDashed, Type, Image, ChevronDown, ChevronRight, Trash2 } from "lucide-react";
 import { useDraggable, useDroppable } from "@dnd-kit/core";
 
 function setIcon(icon: string) {
@@ -106,6 +99,7 @@ const NestedMenuItem: React.FC<NestedMenuItemProps> = ({
               e.stopPropagation();
               onClickDelete(id);
             }}
+            data-testid="menu-item-delete-button"
           >
             <Trash2 className="menu-item-icon menu-item-delete" />
           </div>

@@ -26,6 +26,7 @@ const NestedMenuHeader: React.FC<NestedMenuHeaderProps> = ({
 
         {/*The StopPropagation prevents header-button from being clicked */}
         <button
+          aria-label="add-header-button"
           className="header-add-button"
           onClick={(e) => {
             e.stopPropagation();

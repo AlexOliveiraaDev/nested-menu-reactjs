@@ -1,7 +1,5 @@
-import { useState } from "react";
 import "./App.css";
 import NestedMenu from "./components/nested-menu/NestedMenu.tsx";
-//import menuConfig from "./config/testjson";
 import menuConfig from "./config/nested-config.json";
 
 //colors of NestedMenu can be changed in variables in App.css

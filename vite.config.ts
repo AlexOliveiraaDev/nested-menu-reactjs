@@ -10,7 +10,7 @@ export default defineConfig({
   build: {
     // build package as a library
     lib: {
-      entry: path.resolve(__dirname, "src/index.ts"),
+      entry: path.resolve(__dirname, "src/main.tsx"),
       // es = ES module
       formats: ["es", "cjs"],
     },

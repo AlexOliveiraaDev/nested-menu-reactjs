@@ -1,11 +1,5 @@
 import { useState } from "react";
-import {
-  DndContext,
-  MouseSensor,
-  TouchSensor,
-  useSensor,
-  useSensors,
-} from "@dnd-kit/core";
+import { DndContext, MouseSensor, TouchSensor, useSensor, useSensors } from "@dnd-kit/core";
 import { Braces } from "lucide-react";
 
 import "./NestedMenu.css";
@@ -95,7 +89,10 @@ const NestedMenu: React.FC<NestedMenuProps> = ({ items }) => {
       onDragEnd={handleDragEnd}
     >
       {dropdownState && (
-        <div className="add-dropdown">
+        <div
+          aria-label="dropdown"
+          className="add-dropdown"
+        >
           <NestedMenuDropdown onClick={handleClickDropdown} />
         </div>
       )}
@@ -117,6 +114,7 @@ const NestedMenu: React.FC<NestedMenuProps> = ({ items }) => {
       </div>
       <button
         className="json-button"
+        data-testid="json-button"
         onClick={() => setToggleCodeWindow(true)}
       >
         <Braces className="json-icon" />
@@ -126,6 +124,7 @@ const NestedMenu: React.FC<NestedMenuProps> = ({ items }) => {
           <CodeWindow
             code={JSON.stringify(data, null, 2)}
             onClose={() => setToggleCodeWindow(false)}
+            data-testid="code-window"
           />
         </div>
       )}
