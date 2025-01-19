@@ -1,8 +1,12 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Plus, ChevronDown, ChevronUp } from "lucide-react";
 import "./NestedMenuHeader.css";
+import { NestedMenuHeaderProps } from "../../../types/NestedMenuTypes";
 
-const NestedMenuHeader = ({ onHeaderClick, onAddClick }) => {
+const NestedMenuHeader: React.FC<NestedMenuHeaderProps> = ({
+  onHeaderClick,
+  onAddClick,
+}) => {
   const [open, switchOpen] = useState(false);
 
   // Send a callback to NestedMenu and flip the header state
@@ -13,7 +17,10 @@ const NestedMenuHeader = ({ onHeaderClick, onAddClick }) => {
 
   return (
     <div className="main-header-div">
-      <div className="header-button" onClick={handleClick}>
+      <div
+        className="header-button"
+        onClick={handleClick}
+      >
         {open ? <ChevronDown /> : <ChevronUp />}
         <span>Layers</span>
 

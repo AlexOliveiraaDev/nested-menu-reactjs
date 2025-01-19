@@ -1,5 +1,11 @@
-import React, { useState } from "react";
-import { DndContext, MouseSensor, useSensor, useSensors } from "@dnd-kit/core";
+import { useState } from "react";
+import {
+  DndContext,
+  MouseSensor,
+  TouchSensor,
+  useSensor,
+  useSensors,
+} from "@dnd-kit/core";
 import { Braces } from "lucide-react";
 
 import "./NestedMenu.css";
@@ -7,6 +13,7 @@ import NestedMenuHeader from "./nestedmenu-header/NestedMenuHeader";
 import NestedMenuList from "./nestedmenu-list/NestedMenuList";
 import NestedMenuDropdown from "./nestedmenu-dropdown/NestedMenuDropdown";
 import CodeWindow from "../code-window/CodeWindow";
+import { Item, NestedMenuProps } from "../../types/NestedMenuTypes";
 
 import { useDropdownState } from "../../hooks/useDropdownState";
 import {
@@ -20,16 +27,16 @@ import {
   getItemDepth,
 } from "../../hooks/nestedMenuUtils";
 
-const NestedMenu = ({ items }) => {
+const NestedMenu: React.FC<NestedMenuProps> = ({ items }) => {
   const [headerState, setHeaderVisibility] = useState(true);
   const [data, setData] = useState(addUniqueIds(items));
   const { isOpen: dropdownState, toggleDropdown } = useDropdownState();
 
-  const addItem = (newItem) => {
-    setData((prevData) => [...prevData, newItem]);
+  const addItem = (newItem: Item) => {
+    setData((prevData: Item[]) => [...prevData, newItem]);
   };
 
-  const handleClickDropdown = (e) => {
+  const handleClickDropdown = (index: number) => {
     toggleDropdown();
     const newId = generateUUID();
     const newItems = [
@@ -37,10 +44,10 @@ const NestedMenu = ({ items }) => {
       { name: "New Text", icon: "Type", id: newId },
       { name: "New Image", icon: "Image", id: newId },
     ];
-    if (e >= 0 && e < newItems.length) addItem(newItems[e]);
+    if (index >= 0 && index < newItems.length) addItem(newItems[index]);
   };
 
-  const handleDragEnd = (event) => {
+  const handleDragEnd = (event: any) => {
     const { active, over } = event;
 
     if (!over || active.id === over.id) return;
@@ -64,23 +71,29 @@ const NestedMenu = ({ items }) => {
   const sensors = useSensors(
     useSensor(MouseSensor, {
       activationConstraint: { distance: 10 },
+    }),
+    useSensor(TouchSensor, {
+      activationConstraint: { distance: 10 },
     })
   );
 
-  const updateName = (id, newName) => {
+  const updateName = (id: string, newName: string) => {
     const updatedItems = updateItemName(data, id, newName);
     setData(updatedItems);
   };
 
-  const handleRemoveItem = (id) => {
+  const handleRemoveItem = (id: string) => {
     const updatedItems = removeItemById(data, id);
-    setData(updatedItems.newItems);
+    setData(updatedItems!.newItems);
   };
 
   const [toggleCodeWindow, setToggleCodeWindow] = useState(false);
 
   return (
-    <DndContext sensors={sensors} onDragEnd={handleDragEnd}>
+    <DndContext
+      sensors={sensors}
+      onDragEnd={handleDragEnd}
+    >
       {dropdownState && (
         <div className="add-dropdown">
           <NestedMenuDropdown onClick={handleClickDropdown} />
@@ -97,12 +110,15 @@ const NestedMenu = ({ items }) => {
         >
           <NestedMenuList
             items={data}
-            onClickDelete={(id) => handleRemoveItem(id)}
+            onClickDelete={(id: string) => handleRemoveItem(id)}
             onUpdateName={updateName}
           />
         </div>
       </div>
-      <button className="json-button" onClick={() => setToggleCodeWindow(true)}>
+      <button
+        className="json-button"
+        onClick={() => setToggleCodeWindow(true)}
+      >
         <Braces className="json-icon" />
       </button>
       {toggleCodeWindow && (

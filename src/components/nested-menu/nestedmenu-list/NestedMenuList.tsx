@@ -1,10 +1,14 @@
-import React from "react";
+import { Item, NestedMenuListProps } from "../../../types/NestedMenuTypes";
 import NestedMenuItem from "../nestedmenu-Item/NestedMenuItem";
 
-const NestedMenuList = ({ items, onClickDelete, onUpdateName }) => {
+const NestedMenuList: React.FC<NestedMenuListProps> = ({
+  items,
+  onClickDelete,
+  onUpdateName,
+}) => {
   return (
     <div>
-      {items.map((item) => (
+      {items.map((item: Item) => (
         <NestedMenuItem
           key={item.id}
           id={item.id}

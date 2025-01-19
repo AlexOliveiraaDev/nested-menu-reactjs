@@ -1,4 +1,5 @@
-import React, { useState, useRef } from "react";
+import React, { useState } from "react";
+import { NestedMenuItemProps } from "../../../types/NestedMenuTypes";
 import "./NestedMenuItem.css";
 import NestedMenuList from "../nestedmenu-list/NestedMenuList";
 import {
@@ -11,7 +12,7 @@ import {
 } from "lucide-react";
 import { useDraggable, useDroppable } from "@dnd-kit/core";
 
-function setIcon(icon) {
+function setIcon(icon: string) {
   switch (icon) {
     case "SquareDashed":
       return <SquareDashed className="menu-item-icon" />;
@@ -24,7 +25,7 @@ function setIcon(icon) {
   }
 }
 
-const NestedMenuItem = ({
+const NestedMenuItem: React.FC<NestedMenuItemProps> = ({
   id,
   name,
   icon,
@@ -57,7 +58,11 @@ const NestedMenuItem = ({
   const [newName, setNewName] = useState(name);
 
   return (
-    <div ref={setDroppableRef} className="menu-item-wrapper">
+    <div
+      ref={setDroppableRef}
+      className="menu-item-wrapper"
+      touch-action="none"
+    >
       <div
         className="menu-item-main-div"
         ref={setNodeRef}
@@ -65,8 +70,11 @@ const NestedMenuItem = ({
         {...listeners}
         {...attributes}
       >
-        <div className="menu-item-row" onClick={() => switchOpen(!open)}>
-          {children.length > 0 &&
+        <div
+          className="menu-item-row"
+          onClick={() => switchOpen(!open)}
+        >
+          {children!.length > 0 &&
             (open ? (
               <ChevronDown className="menu-item-arrow" />
             ) : (
@@ -103,10 +111,10 @@ const NestedMenuItem = ({
           </div>
         </div>
 
-        {children.length > 0 && open && (
+        {children!.length > 0 && open && (
           <div className="menu-item-children">
             <NestedMenuList
-              items={children}
+              items={children ? children : []}
               onClickDelete={onClickDelete}
               onUpdateName={onUpdateName}
             />

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./App.css";
-import NestedMenu from "./components/nested-menu/NestedMenu.jsx";
+import NestedMenu from "./components/nested-menu/NestedMenu.tsx";
 import items from "/src/config/nested-config.json";
 import test1 from "/src/config/test1.json";
 import test2 from "/src/config/test2.json";
