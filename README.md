@@ -101,7 +101,7 @@ You can customize the appearance by modifying the CSS variables in your styleshe
 
 To add new types of items to your menu, you'll need to modify two files:
 
-1. In `NestedMenuItem.jsx`, add your new icon and case:
+1. In `NestedMenuItem.tsx`, add your new icon and case:
 
 ```jsx
 import { SquareDashed, Type, Image, FileText, Link } from "lucide-react"; // Add new icons
@@ -125,7 +125,7 @@ function setIcon(icon) {
 }
 ```
 
-2. In `NestedMenuDropdown.jsx`, add your new items:
+2. In `NestedMenuDropdown.tsx`, add your new items:
 
 ```jsx
 import { SquareDashed, Type, Image, FileText, Link } from "lucide-react";
@@ -159,7 +159,7 @@ const NestedMenuDropdown = ({ onClick }) => {
 };
 ```
 
-3. Update the `handleClickDropdown` function in `NestedMenu.jsx`:
+3. Update the `handleClickDropdown` function in `NestedMenu.tsx`:
 
 ```jsx
 const handleClickDropdown = (e) => {
@@ -180,12 +180,12 @@ const handleClickDropdown = (e) => {
 
 ```
 nested-menu/
-├── NestedMenu.jsx         # Main component
-├── NestedMenuHeader.jsx   # Header with collapse/expand
-├── NestedMenuItem.jsx     # Individual menu item
-├── NestedMenuList.jsx     # List container
-├── NestedMenuDropdown.jsx # Add item dropdown
-└── CodeWindow.jsx         # JSON viewer
+├── NestedMenu.tsx         # Main component
+├── NestedMenuHeader.tsx   # Header with collapse/expand
+├── NestedMenuItem.tsx     # Individual menu item
+├── NestedMenuList.tsx     # List container
+├── NestedMenuDropdown.tsx # Add item dropdown
+└── CodeWindow.tsx         # JSON viewer
 ```
 
 ## 📝 Features in Detail

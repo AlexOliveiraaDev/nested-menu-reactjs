@@ -1,3 +1,5 @@
+import { Item, FindResult, RemoveResult } from "../types/NestedMenuTypes";
+
 export const generateUUID = () => {
   return "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, function (c) {
     const r = (Math.random() * 16) | 0;
@@ -6,24 +8,24 @@ export const generateUUID = () => {
   });
 };
 
-export const addUniqueIds = (items, parentId = "") => {
-  return items.map((item, index) => {
+export const addUniqueIds = (items: Item[]): Item[] => {
+  return items.map((item: Item) => {
     const uniqueId = generateUUID();
     return {
       ...item,
       id: uniqueId,
-      children: item.children ? addUniqueIds(item.children, uniqueId) : [],
+      children: item.children ? addUniqueIds(item.children) : [],
     };
   });
 };
 
-export const findItemById = (items, targetId) => {
+export const findItemById = (items: Item[], targetId: string): FindResult | null => {
   for (let i = 0; i < items.length; i++) {
     if (items[i].id === targetId) {
       return { item: items[i], path: [i] };
     }
     if (items[i].children) {
-      const result = findItemById(items[i].children, targetId);
+      const result = findItemById(items[i].children!, targetId);
       if (result) {
         return {
           item: result.item,
@@ -35,12 +37,16 @@ export const findItemById = (items, targetId) => {
   return null;
 };
 
-export const removeItemAtPath = (items, path) => {
+export const removeItemAtPath = (items: Item[], path: number[]): RemoveResult => {
   const newItems = [...items];
   let current = newItems;
 
   for (let i = 0; i < path.length - 1; i++) {
-    current = current[path[i]].children;
+    const nextCurrent = current[path[i]]?.children;
+    if (!nextCurrent) {
+      throw new Error("Invalid path");
+    }
+    current = nextCurrent;
   }
 
   const removedItem = current[path[path.length - 1]];
@@ -48,23 +54,21 @@ export const removeItemAtPath = (items, path) => {
   return { newItems, removedItem };
 };
 
-export const removeItemById = (items, targetId) => {
+export const removeItemById = (items: Item[], targetId: string) => {
   const result = findItemById(items, targetId);
   if (result) return removeItemAtPath(items, result.path);
 };
 
-export const getItemDepth = (items, targetId) => {
+export const getItemDepth = (items: Item[], targetId: string) => {
   const result = findItemById(items, targetId);
   return result ? result.path.length - 1 : 0;
 };
 
-export const addItemToPath = (items, item, targetId) => {
+export const addItemToPath = (items: Item[], item: Item, targetId: string) => {
   const newItems = [...items];
   const target = findItemById(newItems, targetId);
 
   if (target) {
-    const currentDepth = target.path.length - 1;
-
     if (!target.item.children) {
       target.item.children = [];
     }
@@ -74,7 +78,7 @@ export const addItemToPath = (items, item, targetId) => {
   return newItems;
 };
 
-export const updateItemName = (items, itemId, newName) => {
+export const updateItemName = (items: Item[], itemId: string, newName: string) => {
   const newItems = [...items];
   const target = findItemById(newItems, itemId);
 
@@ -83,7 +87,11 @@ export const updateItemName = (items, itemId, newName) => {
     const path = target.path;
 
     for (let i = 0; i < path.length - 1; i++) {
-      current = current[path[i]].children;
+      const nextCurrent = current[path[i]]?.children;
+      if (!nextCurrent) {
+        throw new Error("Invalid path");
+      }
+      current = nextCurrent;
     }
 
     current[path[path.length - 1]] = {
